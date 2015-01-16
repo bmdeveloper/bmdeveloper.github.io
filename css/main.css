@@ -7,7 +7,7 @@ html {
 body {
     background-color:#4a525a;
     color:#c5cee3;
-     margin:7px;
+    margin:7px;
 }
 
 h3 {
@@ -116,6 +116,7 @@ a:focus {
 .photo-details-heading {
     width:100%;
     float:left;
+    margin-bottom:10px;
 }
 
 .photo-details-heading .photo-title {
