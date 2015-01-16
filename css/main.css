@@ -124,6 +124,10 @@ a:focus {
 .photo-details-heading .back-button {
     display:inline-block;
     float:right;
+    
+}
+
+.photo-details-heading .photo-title, .photo-details-heading .back-button {
     margin-bottom:10px;
 }
 
