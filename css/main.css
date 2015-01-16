@@ -43,6 +43,10 @@ a:focus {
 
 /************Loading container styles***************/
 
+.loading-container {
+    margin:10px 0;
+}
+
 .loading-container .spiral-loader{
      display:inline-block;   
      background-image: url("../img/spiral-loader.gif");

@@ -3,10 +3,6 @@
 photoFeedControllers.controller('PhotoListController', ['$scope', 'flickrPhotosService', '$timeout',
   function ($scope, flickrPhotosService, $timeout) {
 
-      //add comments
-      //upload 
-      //test
-
       // variable to check whether new page data is loading
       $scope.infiniteBusy = false;
 
