@@ -8,7 +8,7 @@ photoFeedControllers.controller('PhotoListController', ['$scope', 'flickrPhotosS
       //test
 
       // variable to check whether new page data is loading
-      $scope.infiniteBusy = false;
+      $scope.infiniteBusy = true;
 
       $scope.PhotoListData = flickrPhotosService.getPhotos({}, function (data)
       {
