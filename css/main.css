@@ -1,0 +1,233 @@
+/* main css stylesheet */
+
+/* generic styles */
+html {
+
+}
+body {
+    margin: 20px;
+    background-color:#4a525a;
+    color:#c5cee3;
+
+}
+
+.main-content {
+    overflow-x: hidden;
+  
+
+}
+
+a,a:visited,a:hover,a:focus,a:active{
+    color:#fff;
+}
+
+a:focus {
+    text-decoration:none;
+}
+
+.btn-primary {
+    background-color:#960C0C;
+    border-color:#960C0C;
+}
+
+.btn-primary:hover {
+    background-color:#770A0A;
+    border-color:#770A0A;
+}
+
+/************Loading container styles***************/
+
+.loading-container .spiral-loader{
+     display:inline-block;   
+     background-image: url("../img/spiral-loader.gif");
+     background-repeat:no-repeat;
+     width:19px;
+     height:17px;
+     background-position-y:bottom;
+     margin-left:10px;
+}
+
+.loading-container p {
+    vertical-align:top;
+}
+
+.infinite-scroll-loading-container .line-loader {
+     display:inline-block;   
+     background-image: url("../img/line-loader.gif");
+     background-repeat:no-repeat;
+     margin-top:15px;
+     width:130px;
+     height:17px;
+}
+
+
+/************Loading container styles end***************/
+
+/************Photo list page styles***************/
+
+/*main photo box style */
+
+.photo-box-container {
+    border-bottom: solid 1px #ccc;
+    padding: 0 0 15px 0;
+}
+
+/*photo link style */
+
+.photo-list-img-link {
+    min-width: 110px;
+    text-align: center;
+}
+
+/* photo information box styles */
+
+.photo-list-details h4 {
+    white-space: nowrap;
+}
+
+.photo-info-container {
+    min-width: 250px;
+}
+
+    .photo-info-container .date-published, .photo-info-container .post-author, .photo-info-container .flickr-link {
+        display: block;
+    }
+
+    .photo-info-container .post-author, .photo-info-container .flickr-link {
+        float: left;
+    }
+
+    .photo-info-container .flickr-link {
+        margin: 0 0 0 10px;
+    }
+
+/************Photo list page styles end***************/
+
+/************Photo details page styles******************/
+
+.photo-details-heading {
+    width:100%;
+    float:left;
+}
+
+.photo-details-heading .photo-title {
+    float:left;
+}
+
+.photo-details-heading .back-button {
+    display:inline-block;
+    float:right;
+}
+
+.photo-details-info,.photo-tag-list {
+    margin-top:5px;
+    clear:both;
+}
+
+.photo-details-info {
+    margin:0 0 15px;
+}
+
+.photo-details-info .post-author {
+    border-right:1px solid #ccc;
+    margin:0 10px 0 0;
+    padding:0 10px 0 0;
+}
+
+.photo-details-info .date-published {
+
+}
+
+.photo-details-main {
+}
+
+.photo-details-main .main-photo{
+    max-width:100%;
+    padding:0 15px 15px 0;
+}
+
+.photo-details-main .photo-description{
+        word-wrap: break-word;
+        padding:0;
+}
+
+.photo-tag-list span {
+    float:left;
+}
+
+.photo-tag-list ul {
+    margin:0;
+    padding:0;
+
+}
+
+.photo-tag-list ul li {
+    list-style-type:none;
+    margin-left:3px;
+    float:left;
+}
+
+/************Photo details page styles end**************/
+
+@media (min-width: 800px) {
+    /************Photo list page styles******************/
+
+    /* photo information box styles above 800px*/
+
+    .photo-info-container {
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19-  */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+         /*Use flexbox to reorder the information as per wireframe*/
+        .photo-info-container .date-published {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 2;
+            -webkit-order: 2;
+            order: 2;
+            margin: 0 0px 0 10px;
+        }
+
+        .photo-info-container .post-author {
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -ms-flex-order: 1;
+            -webkit-order: 1;
+            order: 1;
+        }
+
+        .photo-info-container .flickr-link {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -ms-flex-order: 3;
+            -webkit-order: 3;
+            order: 3;
+        }
+
+        /************Photo list page styles******************/
+
+        /************Photo details page styles******************/
+        /************Photo details page styles end**************/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

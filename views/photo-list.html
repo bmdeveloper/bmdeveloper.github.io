@@ -1,0 +1,31 @@
+﻿<div class="loading-container" data-ng-hide="PhotoListData.$resolved">
+<p>Loading<span class="spiral-loader"></span></p>
+</div>
+
+<div class="error-message" data-ng-show="PhotoListData.$resolved && PhotoListData.stat=='fail'">
+    <p>Data failed to load.</p>
+</div>
+
+<div data-ng-show="PhotoListData.$resolved && !PhotoListData.stat">
+    <p>Data failed to load. Please check your internet connection.</p>
+</div>
+
+<div data-infinite-scroll='nextPage()' data-infinite-scroll-distance='0' data-infinite-scroll-immediate-check="false">
+<div class="media photo-box-container"  data-ng-show="PhotoListData.stat=='ok'" data-ng-repeat="photo in PhotoList">
+    <a class="media-left photo-list-img-link" href="#/photos/{{photo.id}}">
+        <img data-ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg" alt="{{photo.title}}" />
+    </a>
+    <div class="media-body media-middle photo-list-details">
+        <h4 class="media-heading"><a href="#/photos/{{photo.id}}">{{photo.title || photo.ownername + " Photo"}}</a></h4>
+
+        <div class="photo-info-container">
+            <span class="date-published">Published {{photo.dateupload * 1000|date:"MMM d,y 'at' HH:mm"}}</span>
+            <a class="post-author" href="https://www.flickr.com/photos/{{photo.owner}}/" target="_blank">{{photo.ownername}}</a>
+            <a class="flickr-link" href="https://www.flickr.com/photos/{{photo.owner}}/{{photo.id}}" target="_blank">View on Flickr</a>
+        </div>
+    </div>
+</div>
+    <div data-ng-show='infiniteBusy' class="infinite-scroll-loading-container"><span class="line-loader"></span></div>
+</div>
+
+
