@@ -116,7 +116,6 @@ a:focus {
 .photo-details-heading {
     width:100%;
     float:left;
-    margin-bottom:10px;
 }
 
 .photo-details-heading .photo-title {
@@ -126,6 +125,7 @@ a:focus {
 .photo-details-heading .back-button {
     display:inline-block;
     float:right;
+    margin-bottom:10px;
 }
 
 .photo-details-info,.photo-tag-list {
@@ -216,7 +216,7 @@ a:focus {
             order: 3;
         }
 
-        /************Photo list page styles******************/
+        /************Photo list page styles end******************/
 
         /************Photo details page styles******************/
         /************Photo details page styles end**************/
