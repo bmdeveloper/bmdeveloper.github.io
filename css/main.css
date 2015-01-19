@@ -7,7 +7,7 @@ html {
 body {
     background-color:#4a525a;
     color:#c5cee3;
-    margin:7px;
+    margin:5px;
 }
 
 h3 {
@@ -41,8 +41,7 @@ a:focus {
     border-color:#770A0A;
 }
 
-/************Loading container styles***************/
-
+/* Loading container styles */
 .loading-container {
     margin:10px 0;
 }
@@ -70,11 +69,11 @@ a:focus {
      height:17px;
 }
 
-/************Loading container styles end***************/
+/* Loading container styles end */
 
-/************Photo list page styles***************/
+/* Photo list page styles */
 
-/*main photo box style */
+/* main photo box style */
 
 .media {
     border-bottom: solid 1px #ccc;
@@ -82,7 +81,7 @@ a:focus {
     padding: 10px 0;
 }
 
-/*photo link style */
+/* photo link style */
 
 .photo-list-img-link {
     min-width: 110px;
@@ -111,9 +110,9 @@ a:focus {
         margin: 0 0 0 10px;
     }
 
-/************Photo list page styles end***************/
+/* Photo list page styles end */
 
-/************Photo details page styles******************/
+/* Photo details page styles */
 
 .photo-details-heading {
     width:100%;
@@ -183,21 +182,31 @@ a:focus {
     float:left;
 }
 
-/************Photo details page styles end**************/
+/* Photo details page styles end */
 
 @media (min-width: 800px) {
-    /************Photo list page styles******************/
+    /* Generic */
 
-    /* photo information box styles above 800px*/
+    body {
+        margin:10px;
+    }
+
+    /* Generic end* */
+
+    /* Photo list page styles */
+
+    /* photo information box styles above 800px */
+
+    /*Use flexbox to reorder the information for larger screen sizes as per wireframe*/
 
     .photo-info-container {
-        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-        display: -moz-box; /* OLD - Firefox 19-  */
-        display: -ms-flexbox; /* TWEENER - IE 10 */
-        display: -webkit-flex; /* NEW - Chrome */
-        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        display: -webkit-box; 
+        display: -moz-box; 
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
     }
-         /*Use flexbox to reorder the information as per wireframe*/
+
         .photo-info-container .date-published {
             -webkit-box-ordinal-group: 2;
             -moz-box-ordinal-group: 2;
@@ -222,9 +231,11 @@ a:focus {
             -webkit-order: 3;
             order: 3;
         }
-        /************Photo list page styles end******************/
-        /************Photo details page styles******************/
-        /************Photo details page styles end**************/
+/* Photo list page styles end */
+
+/* Photo details page styles */
+
+/* Photo details page styles end */
 }
 
 
