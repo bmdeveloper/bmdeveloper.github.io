@@ -13,7 +13,11 @@ photoFeedServices.factory('flickrPhotosService', ['$resource', function ($resour
         get: { method: 'GET',cache:true}
     });
 
-    var photoDataById = $resource(publicPhotoBaseUrl, { method: 'flickr.photos.getInfo', api_key: api_key, format: 'json', nojsoncallback: '1' });
+    var photoDataById = $resource(publicPhotoBaseUrl, {
+        method: 'flickr.photos.getInfo', api_key: api_key, format: 'json', nojsoncallback: '1'
+    }, {
+        get: { method: 'GET', cache: true }
+    });
 
     //variable to maintain a count of the next page load
     flickrPhotoClass.pageToLoad = 2;
