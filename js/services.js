@@ -1,6 +1,4 @@
-﻿
-
-var photoFeedServices = angular.module('photoFeedServices', ['ngResource']);
+﻿var photoFeedServices = angular.module('photoFeedServices', ['ngResource']);
 
 photoFeedServices.factory('flickrPhotosService', ['$resource', function ($resource) {
     var flickrPhotoClass = {};
@@ -9,7 +7,7 @@ photoFeedServices.factory('flickrPhotosService', ['$resource', function ($resour
 
     var api_key = '4e5708f9ab5d15dfb115bcd109c21743';
 
-    var photosData = $resource(publicPhotoBaseUrl, { method: 'flickr.photos.search', api_key: api_key, tag_mode: 'all', per_page: '20', extras: 'date_upload,owner_name', tags: 'potato', format: 'json', nojsoncallback: '1' }, {
+    var photosData = $resource(publicPhotoBaseUrl, { method: 'flickr.photos.search', api_key: api_key, tag_mode: 'all', per_page: '20', extras: 'date_upload,owner_name', tags: 'sunset', format: 'json', nojsoncallback: '1' }, {
         get: { method: 'GET',cache:true}
     });
 

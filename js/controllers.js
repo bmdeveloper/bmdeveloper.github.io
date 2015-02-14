@@ -6,9 +6,9 @@ photoFeedControllers.controller('PhotoListController', ['$scope', 'flickrPhotosS
       // variable to check whether new page data is loading
       $scope.infiniteBusy = false;
 
-      $scope.PhotoListData = flickrPhotosService.getPhotos({}, function (data)
+      $scope.photoListData = flickrPhotosService.getPhotos({}, function (data)
       {
-          $scope.PhotoList = data.photos.photo;
+          $scope.photoList = data.photos.photo;
 
           // if more than one additional page has been loaded make sure to load them all.
           if (flickrPhotosService.pageToLoad > 2) {
@@ -23,12 +23,12 @@ photoFeedControllers.controller('PhotoListController', ['$scope', 'flickrPhotosS
 
               //check first to see if the next page exists
               if (flickrPhotosService.pageToLoad < data.photos.pages) {
-                  loadNextPage(flickrPhotosService.pageToLoad);
+                  loadnextPage(flickrPhotosService.pageToLoad);
               }
           }
 
           //fucntion to load next page for infinite scroll
-          function loadNextPage(pageNumber) {
+          function loadnextPage(pageNumber) {
               if ($scope.infiniteBusy) {
                   return;
               }
@@ -41,7 +41,7 @@ photoFeedControllers.controller('PhotoListController', ['$scope', 'flickrPhotosS
           function getPhotosbyPage(pageNo,scrollEvent) {
               flickrPhotosService.getPhotos({ page: pageNo }, function (pageData) {
                   var pagePhotos = pageData.photos.photo;
-                  $scope.PhotoList = $scope.PhotoList.concat(pagePhotos);
+                  $scope.photoList = $scope.photoList.concat(pagePhotos);
 
                   if (scrollEvent) {
                       $scope.infiniteBusy = false;
@@ -55,7 +55,7 @@ photoFeedControllers.controller('PhotoDetailsController', ['$scope', '$routePara
   function ($scope, $routeParams, $sce, flickrPhotosService, $timeout) {
 
    
-      $scope.PhotoDetailsData = flickrPhotosService.getPhotoById($routeParams.photoId, function (data) {
+      $scope.photoDetailsData = flickrPhotosService.getPhotoById($routeParams.photoId, function (data) {
           var description = data.photo.description._content;
           var ownerId = data.photo.owner.nsid;
           var ownerUserName = data.photo.owner.username;
@@ -63,7 +63,7 @@ photoFeedControllers.controller('PhotoDetailsController', ['$scope', '$routePara
           var defaultDescription = "<a target=_blank href=\"https://www.flickr.com/people/" + ownerId + "\">" + ownerUserName + "<\/a> posted a photo";
 
           //description comes through as html so make sure to parse this
-          $scope.photoDescription = $sce.trustAsHtml(description || defaultDescription);
+          $scope.PhotoDescription = $sce.trustAsHtml(description || defaultDescription);
       });
 
       $timeout(function () {

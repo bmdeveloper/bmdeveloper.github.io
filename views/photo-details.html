@@ -1,24 +1,24 @@
-﻿<div class="loading-container"  data-ng-hide="PhotoDetailsData.$resolved">
+﻿<div class="loading-container"  data-ng-hide="photoDetailsData.$resolved">
     <p>Loading<span class="spiral-loader"></span></p>
 </div>
 
-<div data-ng-show="PhotoDetailsData.$resolved && PhotoDetailsData.stat=='fail'">
+<div data-ng-show="photoDetailsData.$resolved && photoDetailsData.stat=='fail'">
     <p>Data failed to load click <a data-ng-model="backButton" class="back-button" href="#/photos.html">here</a> to go back to the photo list page.</p>
 </div>
 
-<div data-ng-show="PhotoDetailsData.$resolved && !PhotoDetailsData.stat">
+<div data-ng-show="photoDetailsData.$resolved && !photoDetailsData.stat">
     <p>Data failed to load. Please check your internet connection.</p>
 </div>
 
-<div class="photo-details-container" data-ng-show="PhotoDetailsData.stat=='ok'">
+<div class="photo-details-container" data-ng-show="photoDetailsData.stat=='ok'">
          
     <div class="photo-details-heading">
         
         <h3 class="back-button"><a href="#/photos.html" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></h3> 
-        <h3 class="photo-title" data-ng-model="title"><a href="https://www.flickr.com/photos/{{PhotoDetailsData.photo.owner.nsid}}/{{PhotoDetailsData.photo.id}}" target="_blank">{{PhotoDetailsData.photo.title._content}}</a></h3>
+        <h3 class="photo-title" data-ng-model="title"><a href="https://www.flickr.com/photos/{{photoDetailsData.photo.owner.nsid}}/{{photoDetailsData.photo.id}}" target="_blank">{{photoDetailsData.photo.title._content}}</a></h3>
     </div>
     <div class="photo-details-info">
-        <a class="post-author" href="https://www.flickr.com/photos/{{PhotoDetailsData.photo.owner.nsid}}/" target="_blank" >{{PhotoDetailsData.photo.owner.username}}</a><span class="date-published">Published {{PhotoDetailsData.photo.dateuploaded * 1000 | date:"MMM d,y 'at' HH:mm"}}</span>
+        <a class="post-author" href="https://www.flickr.com/photos/{{photoDetailsData.photo.owner.nsid}}/" target="_blank" >{{photoDetailsData.photo.owner.username}}</a><span class="date-published">Published {{photoDetailsData.photo.dateuploaded * 1000 | date:"MMM d,y 'at' HH:mm"}}</span>
        
     </div>
     <div class="photo-details-main container-fluid">
@@ -28,17 +28,17 @@
          
          data-sizes="100vw"       
 
-         data-ng-srcset="https://farm{{PhotoDetailsData.photo.farm}}.staticflickr.com/{{PhotoDetailsData.photo.server}}/{{PhotoDetailsData.photo.id}}_{{PhotoDetailsData.photo.secret}}_c.jpg 800w,
-           https://farm{{PhotoDetailsData.photo.farm}}.staticflickr.com/{{PhotoDetailsData.photo.server}}/{{PhotoDetailsData.photo.id}}_{{PhotoDetailsData.photo.secret}}_z.jpg 640w,
-           https://farm{{PhotoDetailsData.photo.farm}}.staticflickr.com/{{PhotoDetailsData.photo.server}}/{{PhotoDetailsData.photo.id}}_{{PhotoDetailsData.photo.secret}}_n.jpg 320w"
+         data-ng-srcset="https://farm{{photoDetailsData.photo.farm}}.staticflickr.com/{{photoDetailsData.photo.server}}/{{photoDetailsData.photo.id}}_{{photoDetailsData.photo.secret}}_c.jpg 800w,
+           https://farm{{photoDetailsData.photo.farm}}.staticflickr.com/{{photoDetailsData.photo.server}}/{{photoDetailsData.photo.id}}_{{photoDetailsData.photo.secret}}_z.jpg 640w,
+           https://farm{{photoDetailsData.photo.farm}}.staticflickr.com/{{photoDetailsData.photo.server}}/{{photoDetailsData.photo.id}}_{{photoDetailsData.photo.secret}}_n.jpg 320w"
          
-         alt="{{PhotoDetailsData.photo.title._content}}" />
+         alt="{{photoDetailsData.photo.title._content}}" />
 
-       <p class="photo-description col-sm-6" data-ng-bind-html="photoDescription"></p>
+       <p class="photo-description col-sm-6" data-ng-bind-html="PhotoDescription"></p>
         </div>
     </div>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <div class="g-plusone"></div>
-    <div class="photo-tag-list"><span>Tags:</span> <ul><li data-ng-repeat="tag in PhotoDetailsData.photo.tags.tag" ><a href="https://www.flickr.com/photos/tags/{{tag._content}}/" target="_blank">{{tag.raw}}</a></li></ul></div>
+    <div class="photo-tag-list"><span>Tags:</span> <ul><li data-ng-repeat="tag in photoDetailsData.photo.tags.tag" ><a href="https://www.flickr.com/photos/tags/{{tag._content}}/" target="_blank">{{tag.raw}}</a></li></ul></div>
 
 </div>

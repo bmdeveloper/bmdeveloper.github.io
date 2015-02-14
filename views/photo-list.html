@@ -1,17 +1,17 @@
-﻿<div class="loading-container" data-ng-hide="PhotoListData.$resolved">
+﻿<div class="loading-container" data-ng-hide="photoListData.$resolved">
 <p>Loading<span class="spiral-loader"></span></p>
 </div>
 
-<div class="error-message" data-ng-show="PhotoListData.$resolved && PhotoListData.stat=='fail'">
+<div class="error-message" data-ng-show="photoListData.$resolved && photoListData.stat=='fail'">
     <p>Data failed to load.</p>
 </div>
 
-<div data-ng-show="PhotoListData.$resolved && !PhotoListData.stat">
+<div data-ng-show="photoListData.$resolved && !photoListData.stat">
     <p>Data failed to load. Please check your internet connection.</p>
 </div>
 
 <div data-infinite-scroll='nextPage()' data-infinite-scroll-distance='0' data-infinite-scroll-immediate-check="false">
-<div class="media photo-box-container"  data-ng-show="PhotoListData.stat=='ok'" data-ng-repeat="photo in PhotoList">
+<div class="media photo-box-container"  data-ng-show="photoListData.stat=='ok'" data-ng-repeat="photo in photoList">
     <a class="media-left photo-list-img-link" href="#/photos/{{photo.id}}">
         <img data-ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg" alt="{{photo.title}}" />
     </a>

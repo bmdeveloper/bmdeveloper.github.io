@@ -1,7 +1,6 @@
 var photoFeedApp = angular.module('photoFeedApp', [
   'ngRoute',
   'photoFeedControllers',
-  'photoFeedFilters',
   'photoFeedServices'
 ]);
 
