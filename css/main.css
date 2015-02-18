@@ -70,8 +70,7 @@ a:focus {
   min-width: 110px;
   text-align: center;
 }
-/* photo information box styles */
-.photo-list-details h4 {
+bo .photo-list-details h4 {
   white-space: nowrap;
 }
 .photo-info-container {

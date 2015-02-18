@@ -15,7 +15,7 @@
               if (flickrPhotosService.pageToLoad > 2) {
                   for (var i = 2; i < flickrPhotosService.pageToLoad; i++) {
                       getPhotosbyPage(i, false);
-
+                           
                   }
               }
 
@@ -26,7 +26,7 @@
                   if (flickrPhotosService.pageToLoad < data.photos.pages) {
                       loadnextPage(flickrPhotosService.pageToLoad);
                   }
-              };
+              }; 
 
               //fucntion to load next page for infinite scroll
               function loadnextPage(pageNumber) {
