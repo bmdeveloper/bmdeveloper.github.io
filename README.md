@@ -18,7 +18,7 @@ Installations and basic knowledge of the following are required.
 ##Getting started
 - Install the Prerequisites
 - Clone this repository
-- Navigate to the project root using in the terminal
+- Navigate to the project root in the terminal
 - run npm install
 - Ensure the site is hosted (e.g. using IIS or Node)
 - Navigate to the site (e.g. using http://localhost/bmdeveloper.github.io/)
