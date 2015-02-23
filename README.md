@@ -1,6 +1,7 @@
 # bmdeveloper.github.io
 
 This is a project that interacts with photo information using the [Flickr Api](https://www.flickr.com/services/api/).
+It is also hosted on Github and can be accessed using the http://bmdeveloper.github.io/.
 
 The code consumes a JSON API feed and displays the resulting data in a list. You can also click on a photo for additional information. The project contains features such as infinite scroll and google +1 button. 
 
