@@ -65,11 +65,18 @@ gulp.task('image-copy', function () {
       .pipe(gulp.dest(buildFolder + 'images'));
 });
 
+//copy markup to build folder environment
+gulp.task('external-js-copy', function () {
+    return gulp.src(sourceFolder + 'js/**/*.js', { base: appFolder })
+      .pipe(gulp.dest(buildFolder + "js"));
+});
+
 //replace all build links to dev links in index
 gulp.task('replace-dev-main', function () {
     gulp.src(['index.html'])
       .pipe(replace(buildCSS, devCSS))
       .pipe(replace(buildJS, DevJS))
+      .pipe(replace(buildFolder, sourceFolder))
       .pipe(gulp.dest('./'));
 });
 
@@ -81,6 +88,7 @@ gulp.task('replace-build-main', function () {
       .pipe(replace('<script src="src/app/photo-details-view/photo-details.js"></script>', ''))
       .pipe(replace('<script src="src/app/photo-list-view/photo-list.js"></script>', ''))
       .pipe(replace('<script src="src/app/core/services.js"></script>', ''))
+      .pipe(replace(sourceFolder, buildFolder))
       .pipe(removeEmptyLines())
       .pipe(gulp.dest('./'));
 });
@@ -104,7 +112,7 @@ gulp.task('watch', function () {
     gulp.watch(appFolder + '**/*.js', ['js-linting-dev'], function () { });
 });
 
-gulp.task('build', ['replace-build-viewsource', 'js-linting-combining-minifying', 'less-compiling-minifying', 'markup-copy', 'image-copy', 'replace-build-main']);
+gulp.task('build', ['replace-build-viewsource', 'js-linting-combining-minifying', 'less-compiling-minifying', 'markup-copy', 'external-js-copy', 'image-copy', 'replace-build-main']);
 
 gulp.task('dev', ['less-compiling-dev', 'replace-dev-viewsource', 'replace-dev-main', 'watch']);
 

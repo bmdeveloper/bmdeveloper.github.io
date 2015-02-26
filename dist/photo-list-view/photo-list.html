@@ -11,7 +11,8 @@
 </div>
 
 <div data-infinite-scroll='nextPage()' data-infinite-scroll-distance='0' data-infinite-scroll-immediate-check="false">
-<div class="media photo-box-container"  data-ng-show="photoListData.stat=='ok'" data-ng-repeat="photo in photoList">
+<ul class="main-photo-list">
+<li class="media photo-box-container"  data-ng-show="photoListData.stat=='ok'" data-ng-repeat="photo in photoList">
     <a class="media-left photo-list-img-link" href="#/photos/{{photo.id}}">
         <img data-ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg" alt="{{photo.title}}" />
     </a>
@@ -24,7 +25,8 @@
             <a class="flickr-link" href="https://www.flickr.com/photos/{{photo.owner}}/{{photo.id}}" target="_blank">View on Flickr</a>
         </div>
     </div>
-</div>
+</li>
+</ul>
     <div data-ng-show='infiniteBusy' class="infinite-scroll-loading-container"><span class="line-loader"></span></div>
 </div>
 

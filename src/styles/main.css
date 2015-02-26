@@ -59,6 +59,11 @@ a:focus {
 }
 /* Loading container styles end */
 /* Photo list page styles */
+.main-photo-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 /* main photo box style */
 .media {
   border-bottom: solid 1px #ccc;
@@ -70,7 +75,8 @@ a:focus {
   min-width: 110px;
   text-align: center;
 }
-bo .photo-list-details h4 {
+/* photo information box styles */
+.photo-list-details h4 {
   white-space: nowrap;
 }
 .photo-info-container {
@@ -148,7 +154,7 @@ bo .photo-list-details h4 {
   /* Generic end* */
   /* Photo list page styles */
   /* photo information box styles above 800px */
-  /*Use flexbox to reorder the information for larger screen sizes as per wireframe*/
+  /*Use flexbox to reorder the information for larger screen sizes*/
   .flex-box {
     display: -webkit-box;
     display: -moz-box;
