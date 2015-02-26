@@ -65,7 +65,7 @@ gulp.task('image-copy', function () {
       .pipe(gulp.dest(buildFolder + 'images'));
 });
 
-//copy markup to build folder environment
+//copy ext js to build folder
 gulp.task('external-js-copy', function () {
     return gulp.src(sourceFolder + 'js/**/*.js', { base: appFolder })
       .pipe(gulp.dest(buildFolder + "js"));
