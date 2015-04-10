@@ -3,7 +3,6 @@
     var photoFeedServices = angular.module('photoFeedServices', ['ngResource']);
 
     photoFeedServices.factory('flickrPhotosService', ['$resource', function ($resource) {
-        var flickrPhotoClass = {};
 
         var publicPhotoBaseUrl = 'https://api.flickr.com/services/rest/';
 
@@ -19,20 +18,27 @@
             get: { method: 'GET', cache: true }
         });
 
-        //variable to maintain a count of the next page load
-        flickrPhotoClass.pageToLoad = 2;
+        var pageToLoad = 2;
 
-        //function to get photo list
-        flickrPhotoClass.getPhotos = function (params, callback) {
-            return photosData.get(params, callback);
-        };
-
-        //function to get photo information by id
-        flickrPhotoClass.getPhotoById = function (id, callback) {
-            return photoDataById.get({ photo_id: id }, callback);
+        var flickrPhotoClass = {
+            //variable to maintain a count of the next page load
+            pageToLoad: pageToLoad,
+            //function to get photo list
+            getPhotos: getPhotos,
+            //function to get photo information by id
+            getPhotoById: getPhotoById
         };
 
         return flickrPhotoClass;
+
+        function getPhotos (params, callback) {
+            return photosData.get(params, callback);
+        }
+
+        function getPhotoById(id, callback) {
+            return photoDataById.get({ photo_id: id }, callback);
+        }
+
     }]);
 })();
 
