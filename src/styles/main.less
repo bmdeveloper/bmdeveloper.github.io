@@ -32,14 +32,15 @@ a:focus {
 }
 
 @back-button-color:#960C0C;
+@darken-percentage:10%;
 .btn-primary {
     background-color:@back-button-color;
     border-color:@back-button-color;
 }
 
 .btn-primary:hover {
-    background-color:darken(@back-button-color,10%);
-    border-color:darken(@back-button-color,10%);
+    background-color:darken(@back-button-color,@darken-percentage);
+    border-color:darken(@back-button-color,@darken-percentage);
 }
 
 /* Loading container styles */
@@ -98,7 +99,7 @@ a:focus {
 
 /* photo information box styles */
 
-.photo-list-details h4 {
+.media-heading {
     white-space: nowrap;
 }
 

@@ -76,7 +76,7 @@ a:focus {
   text-align: center;
 }
 /* photo information box styles */
-.photo-list-details h4 {
+.media-heading {
   white-space: nowrap;
 }
 .photo-info-container {
